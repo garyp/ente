@@ -21,6 +21,7 @@ export interface ParsedMetadataJSON {
     modificationTime?: number;
     location?: Location;
     description?: string;
+    title?: string;
 }
 
 /**
@@ -175,6 +176,10 @@ const parseMetadataJSONText = (text: string) => {
 
     parsedMetadataJSON.description = parseGTNonEmptyString(
         metadataJSON["description"],
+    );
+
+    parsedMetadataJSON.title = parseGTNonEmptyString(
+        metadataJSON["title"],
     );
 
     return parsedMetadataJSON;

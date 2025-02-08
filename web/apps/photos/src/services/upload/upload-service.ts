@@ -1078,6 +1078,10 @@ const extractImageOrVideoMetadata = async (
         publicMagicMetadata.caption = caption;
     }
 
+    if (parsedMetadataJSON?.title) {
+        publicMagicMetadata.editedName = parsedMetadataJSON.title;
+    }
+
     return { metadata, publicMagicMetadata };
 };
 
